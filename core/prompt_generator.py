@@ -23,9 +23,9 @@ class PromptGenerator:
         Returns:
             衣服描述字符串
         """
-        outfits = self.character.get('outfits', [])
+        outfits = self.config.get('character', {}).get('outfits', [])
         if not outfits:
-            return "red bodysuit, pilot suit, plugsuit, interface headset"
+            return ""
         
         # 提取权重和描述
         weights = []
@@ -37,7 +37,7 @@ class PromptGenerator:
                 descriptions.append(outfit.get('description', ''))
         
         if not descriptions:
-            return "red bodysuit, pilot suit, plugsuit, interface headset"
+            return ""
         
         # 按权重随机选择
         selected = random.choices(descriptions, weights=weights, k=1)[0]

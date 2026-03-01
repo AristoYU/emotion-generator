@@ -9,23 +9,22 @@ comfyui:
 character:
   name: "souryuu asuka langley"
   base_traits: "blue eyes, long brown hair, hair ornament"
-
-outfits:
-  - name: "red_plugsuit"
-    description: "red bodysuit, pilot suit, plugsuit, interface headset"
-    weight: 2
-  - name: "white_plugsuit"
-    description: "white bodysuit, pilot suit, plugsuit, interface headset"
-    weight: 3
-  - name: "school_uniform"
-    description: "school uniform, white shirt, blue skirt, red ribbon, tokyo-3 middle school uniform"
-    weight: 3
-  - name: "casual"
-    description: "yellow dress, summer outfit, casual"
-    weight: 2
-  - name: "sundress"
-    description: "red sundress, casual, cute outfit"
-    weight: 1
+  outfits:
+    - name: "red_plugsuit"
+      description: "red bodysuit, pilot suit, plugsuit, interface headset"
+      weight: 3
+    - name: "white_plugsuit"
+      description: "white bodysuit, pilot suit, plugsuit, interface headset"
+      weight: 2
+    - name: "school_uniform"
+      description: "school uniform, white shirt, blue skirt, red ribbon, tokyo-3 middle school uniform"
+      weight: 4
+    - name: "casual"
+      description: "yellow dress, summer outfit, casual"
+      weight: 2
+    - name: "sundress"
+      description: "red sundress, casual, cute outfit"
+      weight: 2
 
 emotions:
   happy:
