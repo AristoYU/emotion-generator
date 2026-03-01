@@ -1,0 +1,90 @@
+# 情绪生成器配置文件
+
+# 情绪与服装映射
+# 每种情绪对应多种服装选项，带权重（权重越高，被选中的概率越大）
+emotion_clothing:
+  happy:
+    - name: "colorful sundress"
+      weight: 30
+    - name: "bright yellow shirt with jeans"
+      weight: 25
+    - name: "flowy floral skirt with white top"
+      weight: 20
+    - name: "casual pastel hoodie"
+      weight: 15
+    - name: "vibrant red dress"
+      weight: 10
+  
+  sad:
+    - name: "oversized gray sweater"
+      weight: 35
+    - name: "dark blue raincoat"
+      weight: 25
+    - name: "loose black cardigan"
+      weight: 20
+    - name: "faded denim jacket"
+      weight: 15
+    - name: "long dark coat"
+      weight: 5
+  
+  angry:
+    - name: "black leather jacket"
+      weight: 30
+    - name: "dark red combat boots with ripped jeans"
+      weight: 25
+    - name: "spiked accessories with dark outfit"
+      weight: 20
+    - name: "crimson red shirt"
+      weight: 15
+    - name: "torn black t-shirt"
+      weight: 10
+  
+  calm:
+    - name: "soft linen shirt with beige pants"
+      weight: 30
+    - name: "light blue cotton dress"
+      weight: 25
+    - name: "white flowing blouse with khaki skirt"
+      weight: 20
+    - name: "pastel green sweater"
+      weight: 15
+    - name: "neutral tone yoga outfit"
+      weight: 10
+  
+  excited:
+    - name: "neon graphic tee with shorts"
+      weight: 30
+    - name: "sparkly party dress"
+      weight: 25
+    - name: "bold patterned jumpsuit"
+      weight: 20
+    - name: "bright orange athletic wear"
+      weight: 15
+    - name: "glittery accessories with trendy outfit"
+      weight: 10
+  
+  fearful:
+    - name: "oversized hoodie hiding face"
+      weight: 35
+    - name: "dark muted colors, baggy clothes"
+      weight: 25
+    - name: "tattered gray cloak"
+      weight: 20
+    - name: "pale white dress"
+      weight: 15
+    - name: "worn-out brown coat"
+      weight: 5
+
+# 基础 prompt 模板
+prompt_templates:
+  positive_base: "masterpiece, best quality, highres, detailed, {clothing}, expressing {emotion} emotion, beautiful lighting, sharp focus"
+  negative: "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad proportions, disfigured, mutation, deformed"
+
+# 情绪描述词映射
+emotion_descriptions:
+  happy: "joyful, smiling, bright eyes, cheerful atmosphere"
+  sad: "tearful, downcast eyes, melancholic, somber mood"
+  angry: "furious, intense gaze, aggressive posture, tense atmosphere"
+  calm: "serene, peaceful expression, relaxed posture, tranquil setting"
+  excited: "enthusiastic, wide eyes, dynamic pose, energetic vibe"
+  fearful: "terrified, wide fearful eyes, defensive posture, dark atmosphere"

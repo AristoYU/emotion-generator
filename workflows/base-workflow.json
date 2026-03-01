@@ -1,0 +1,273 @@
+{
+  "37": {
+    "inputs": {
+      "lora_name": "Illustrious\\detailed hand focus style illustriousXL v1.1.safetensors",
+      "strength_model": 0.7,
+      "model": [
+        "42",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoRA加载器（仅模型）"
+    }
+  },
+  "38": {
+    "inputs": {
+      "text": "bad quality,worst quality,worst detail,sketch,censor,patreon,watermark,motion lines,emphasis lines,speed lines",
+      "clip": [
+        "53",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Negative)"
+    }
+  },
+  "39": {
+    "inputs": {
+      "lora_name": "Illustrious\\detailed foot focus style illustriousXL v1.safetensors",
+      "strength_model": 0.7,
+      "model": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoRA加载器（仅模型）"
+    }
+  },
+  "40": {
+    "inputs": {
+      "lora_name": "Illustrious\\illustriousXLv01_stabilizer_v1.198.safetensors",
+      "strength_model": 0.6,
+      "model": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoRA加载器（仅模型）"
+    }
+  },
+  "41": {
+    "inputs": {
+      "lora_name": "Illustrious\\Add_Details_v1.2.safetensors",
+      "strength_model": 0.8,
+      "model": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoRA加载器（仅模型）"
+    }
+  },
+  "42": {
+    "inputs": {
+      "ckpt_name": "waiIllustriousSDXL_v160.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器（简易）"
+    }
+  },
+  "43": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "空Latent图像"
+    }
+  },
+  "50": {
+    "inputs": {
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8,
+      "samples": [
+        "51",
+        0
+      ],
+      "vae": [
+        "57",
+        2
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "VAE解码（分块）"
+    }
+  },
+  "51": {
+    "inputs": {
+      "seed": 257243673939605,
+      "steps": 20,
+      "cfg": 6.8,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "karras",
+      "denoise": 0.35,
+      "model": [
+        "41",
+        0
+      ],
+      "positive": [
+        "52",
+        0
+      ],
+      "negative": [
+        "38",
+        0
+      ],
+      "latent_image": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler (Refiner) 257243673939605"
+    }
+  },
+  "52": {
+    "inputs": {
+      "text": "masterpiece,best quality,amazing quality,general,\n\n1girl,\n\nsouryuu asuka langley, (souryuu asuka langley:1.5), blue eyes, blushing, confident smile, long hair, bangs, blue eyes, brown hair, hair ornament,\nBREAK bodysuit, pilot suit, plugsuit, (red bodysuit:1.5), interface headset,\nBREAK outdoors, city, sky, clouds, sun,\nBREAK looking at viewer, (cowboy shot:1.5),\nBREAK <lyco:GoodHands-beta2:1>, (masterpiece:1.2), best quality, high resolution, unity 8k wallpaper, (illustration:0.8), (beautiful detailed eyes:1.6), extremely detailed face, perfect lighting, extremely detailed CG, (perfect hands, perfect anatomy),",
+      "clip": [
+        "53",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive)"
+    }
+  },
+  "53": {
+    "inputs": {
+      "stop_at_clip_layer": -2,
+      "clip": [
+        "57",
+        1
+      ]
+    },
+    "class_type": "CLIPSetLastLayer",
+    "_meta": {
+      "title": "设置CLIP最后一层"
+    }
+  },
+  "54": {
+    "inputs": {
+      "scale_method": "area",
+      "scale_factor": 1,
+      "use_tiled_vae": true,
+      "samples": [
+        "61",
+        0
+      ],
+      "vae": [
+        "57",
+        2
+      ],
+      "upscale_model_opt": [
+        "56",
+        0
+      ]
+    },
+    "class_type": "LatentPixelScale",
+    "_meta": {
+      "title": "Latent Scale (on Pixel Space)"
+    }
+  },
+  "56": {
+    "inputs": {
+      "model_name": "4x-AnimeSharp.safetensors"
+    },
+    "class_type": "UpscaleModelLoader",
+    "_meta": {
+      "title": "加载放大模型"
+    }
+  },
+  "57": {
+    "inputs": {
+      "ckpt_name": "waiIllustriousSDXL_v160.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器（简易）"
+    }
+  },
+  "58": {
+    "inputs": {
+      "seed": 386245130454219,
+      "strength": 0.01,
+      "image": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "ImageAddNoise",
+    "_meta": {
+      "title": "图像添加噪声"
+    }
+  },
+  "61": {
+    "inputs": {
+      "seed": 799046896069790,
+      "steps": 25,
+      "cfg": 7.2,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "57",
+        0
+      ],
+      "positive": [
+        "52",
+        0
+      ],
+      "negative": [
+        "38",
+        0
+      ],
+      "latent_image": [
+        "43",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler (First Pass) 321736340638903"
+    }
+  },
+  "81": {
+    "inputs": {
+      "images": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "预览图像"
+    }
+  },
+  "84": {
+    "inputs": {
+      "text": "masterpiece,best quality,amazing quality,general,\n\ncinematic angle, soft lighting, on bed\n\n2girls,\n\nayanami rei, souryuu asuka langley, partially bra, NSFW, shy, with smile, spread pussy, urethra, clitoris, clitoral hood, cervix, uncensored,\ntouching nipples, with underwears, looking at viewer"
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Positive)"
+    }
+  }
+}
